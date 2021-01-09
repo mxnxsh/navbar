@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: 40px;
+}
+a{
+    text-decoration: none;
+    color:black
+}
+li{
+    list-style-type: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: cornflowerblue;
+    min-height: 23vh;
+}
+.logo{
+    color: white;
+    text-transform: uppercase;
+    font-size: 30px;
+    letter-spacing: 5px;
+}
+.search-box{
+    /* width: 0%; */
+    /* height: 25px; */
+}
+.search-box input{
+    height: 30px;
+    border-radius: 30px; 
+    border: 1px solid #fff;
+} 
+input[type="text"] {
+    font-size:18px;
+    padding: 18px;
+}
+*:focus {
+    outline: none;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+.nav-links a{
+    color: white;
+}
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+.hamburger div{
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+@media screen and (max-width:1024px){
+    nav{
+        min-height: 5vh;
+    }
+    .nav-links{
+        width: 50%;
+    }
+}
+@media screen and (max-width:576px){
+    nav{
+        min-height:10vh ;
+    }
+    .logo h1{
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+    .search-box input{
+        width: 145px;
+    }
+    input[type="text"] {
+        font-size:15px;
+        padding: 12px;
+    }
+}
+@media screen and (max-width:768px){
+    nav{
+        min-height:9vh ;
+    }
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        position: absolute;
+        right: 0;
+        top: 9vh;
+        height: 92vh;
+        background-color: teal;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav-links a{
+        opacity: 1;
+    }
+    .hamburger{
+        display: block;
+    }
+    .nav-active{
+        transform: translateX(0%);
+    }
+}
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(58px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
